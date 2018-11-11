@@ -41,12 +41,17 @@ class Tree:
         """
         # if root is None or root is the search data.
         if node is None or node.data == data:
+            print("found",node.data,data,node)
             return node
 
         if node.data < data:
+            print("found", node.data, data, node)
             return self.search(node.right, data)
+            print("found", node.data, data, node)
         else:
+            print("found", node.data, data, node)
             return self.search(node.left, data)
+            print("found", node.data, data, node)
 
 
 
@@ -87,6 +92,8 @@ class Tree:
 
     def traverseInorder(self, root):
         """
+        # Inorder traversal
+        # Left -> Root -> Right
         traverse function will print all the node in the tree.
         """
         if root is not None:
@@ -96,6 +103,8 @@ class Tree:
 
     def traversePreorder(self, root):
         """
+        # Preorder traversal
+        # Root -> Left ->Right
         traverse function will print all the node in the tree.
         """
         if root is not None:
@@ -105,6 +114,8 @@ class Tree:
 
     def traversePostorder(self, root):
         """
+        # Postorder traversal
+        # Left ->Right -> Root
         traverse function will print all the node in the tree.
         """
         if root is not None:
@@ -133,7 +144,8 @@ def main():
 
     print ("Traverse Postorder")
     tree.traversePostorder(root)
-
+    print("Search")
+    tree.search(root, 40)
 
 if __name__ == "__main__":
     main()
